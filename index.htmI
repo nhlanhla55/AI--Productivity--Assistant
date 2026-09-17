@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI-Powered Workplace Productivity Assistant</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      color: #1f2937;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #172554;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin-bottom: 10px;
+      font-size: 32px;
+    }
+
+    header p {
+      font-size: 16px;
+      opacity: 0.9;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      margin-bottom: 20px;
+      border-radius: 14px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    .card h2 {
+      margin-bottom: 15px;
+      color: #172554;
+    }
+
+    textarea,
+    input,
+    select {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0 15px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    button {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 12px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 15px;
+      margin-right: 8px;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+
+    .output {
+      margin-top: 20px;
+      padding: 18px;
+      background: #eff6ff;
+      border-left: 4px solid #2563eb;
+      border-radius: 8px;
+      white-space: pre-wrap;
+      line-height: 1.6;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+    }
+
+    .feature {
+      padding: 18px;
+      background: #f8fafc;
+      border-radius: 10px;
+      border: 1px solid #e2e8f0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #64748b;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>AI-Powered Workplace Productivity Assistant</h1>
+  <p>Smart support for workplace communication, planning and productivity</p>
+</header>
+
+<div class="container">
+
+  <div class="card">
+    <h2>What can this assistant help with?</h2>
+
+    <div class="features">
+      <div class="feature">
+        <strong>📧 Email Generation</strong>
+        <p>Create professional workplace emails.</p>
+      </div>
+
+      <div class="feature">
+        <strong>📋 Task Planning</strong>
+        <p>Organise tasks and priorities.</p>
+      </div>
+
+      <div class="feature">
+        <strong>💬 Communication</strong>
+        <p>Improve workplace messages.</p>
+      </div>
+
+      <div class="feature">
+        <strong>💡 Productivity</strong>
+        <p>Generate practical productivity suggestions.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Productivity Assistant</h2>
+
+    <label for="task">What would you like help with?</label>
+
+    <textarea id="task" rows="5"
+      placeholder="Example: Write a professional email asking my manager for a meeting."></textarea>
+
+    <button onclick="generateResponse()">Generate Assistance</button>
+    <button onclick="clearAssistant()">Clear</button>
+
+    <div id="output" class="output">
+      Your generated response will appear here.
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Responsible AI</h2>
+    <p>
+      AI-generated content should be reviewed by a human before being used.
+      Users should avoid entering confidential or sensitive workplace information.
+      AI should support human decision-making rather than replace human judgement.
+    </p>
+  </div>
+
+</div>
+
+<footer>
+  AI-Powered Workplace Productivity Assistant | AI Skills Acceleration Project
+</footer>
+
+<script>
+  function generateResponse() {
+
+    const task = document.getElementById("task").value.trim();
+    const output = document.getElementById("output");
+
+    if (!task) {
+      output.textContent = "Please enter a workplace task or request first.";
+      return;
+    }
+
+    const lowerTask = task.toLowerCase();
+
+    if (lowerTask.includes("email")) {
+
+      output.textContent =
+`Subject: Professional Workplace Request
+
+Dear [Name],
+
+I hope you are doing well.
+
+I am writing regarding ${task.replace(/write a professional email/i, "").trim()}.
+
+Please let me know a suitable time to discuss this further.
+
+Kind regards,
+[Your Name]`;
+
+    } else if (
+      lowerTask.includes("task") ||
+      lowerTask.includes("plan") ||
+      lowerTask.includes("priority")
+    ) {
+
+      output.textContent =
+`Suggested Task Plan
+
+1. Identify the most urgent task.
+2. Break large tasks into smaller actions.
+3. Complete high-priority work first.
+4. Set realistic deadlines.
+5. Review your progress at the end of the day.
+
+Productivity tip:
+Focus on one important task at a time and minimise unnecessary distractions.`;
+
+    } else if (
+      lowerTask.includes("message") ||
+      lowerTask.includes("communication")
+    ) {
+
+      output.textContent =
+`Professional Communication Suggestion
+
+Keep your message clear, respectful and concise.
+
+Suggested structure:
+• Greeting
+• Main purpose of the message
+• Important details
+• Requested action
+• Professional closing
+
+Always review the final message before sending it.`;
+
+    } else {
+
+      output.textContent =
+`Productivity Suggestion
+
+Your request has been received.
+
+Recommended approach:
+1. Clearly define the desired outcome.
+2. Break the task into smaller steps.
+3. Prioritise the most important action.
+4. Set a realistic deadline.
+5. Review the result before completing the task.
+
+For AI-generated information, verify important details and use human judgement.`;
+    }
+  }
+
+  function clearAssistant() {
+    document.getElementById("task").value = "";
+    document.getElementById("output").textContent =
+      "Your generated response will appear here.";
+  }
+</script>
+
+</body>
+</html>
