@@ -2,37 +2,24 @@
 
 ## Project Overview
 
-The AI-Powered Workplace Productivity Assistant is an AI Resume Builder designed to help job seekers create professional resumes more efficiently.
+An AI-powered assistant designed to help users complete common workplace tasks more efficiently.
 
-## Problem Statement
+## Features
 
-Job seekers can spend significant time writing, improving, and formatting resumes. This project uses AI to simplify the process and provide structured assistance with resume content.
-
-## Key Features
-
-- AI-generated professional summaries
-- AI-assisted work experience descriptions
-- Skills suggestions
-- Professional resume templates
-- ATS-friendly resume guidance
-- Dynamic resume preview
-- Resume export
-- Responsive design for mobile and desktop
+- Email generation
+- Task planning and prioritisation
+- Professional workplace communication
+- AI-assisted productivity support
 
 ## AI Tools Used
 
 - ChatGPT
 - Gemini
-- Lovable
-
-## Prompt Engineering
-
-The project uses structured prompts to generate professional summaries, improve work experience descriptions, and assist with skills content. Prompts are reviewed and refined to improve clarity, accuracy, and professional tone.
 
 ## Responsible AI
 
-AI-generated content should always be reviewed by the user. The assistant should not invent qualifications, experience, or skills. Users should protect confidential personal information and verify all information before using the final resume.
+Users should review AI-generated content, protect confidential information, and apply human judgement when using AI.
 
 ## Goal
 
-The goal is to demonstrate how AI tools and effective prompt engineering can improve productivity for job seekers while applying responsible and ethical AI practices.
+To demonstrate how AI tools and effective prompting can improve workplace productivity.
